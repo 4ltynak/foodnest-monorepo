@@ -14,7 +14,7 @@ function Meals(props){
                 {
                     itemsData.map((foodItem) => {
                         return( 
-                        <Grid size={3} key={foodItem.itemName}>
+                        <Grid size={{xs: 12, md: 3}} key={foodItem.itemName}>
                             <MealsItem food={foodItem}/>
                         </Grid>)
                     })

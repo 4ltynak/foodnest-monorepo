@@ -5,13 +5,14 @@ import Typography from '@mui/material/Typography';
 import AdminOrderItem from './AdminOrderItem';
 import List from '@mui/material/List';
 import Grid from '@mui/material/Grid';
+import CircularProgress from '@mui/material/CircularProgress';
 import { useTheme } from '@emotion/react';
 
 function AdminOrdersView(){
     const theme = useTheme();
 
     const [orders, setOrders] = useState([]);
-
+    const [isLoading, setIsLoading] = useState(null);
     async function retrieveOrders() {
         const response = await serverAPI.get("/orders");
         return response.data;
@@ -24,27 +25,37 @@ function AdminOrdersView(){
     }
 
     useEffect(() => {
-        
         const fetchOrders = async () => {
+                    setIsLoading(true);
+
             try {
                 const orderList = await retrieveOrders();
                 setOrders(orderList);
             } catch (err) {
                 console.log("Error retrieving orders: ", err);
+            } finally {
+                setIsLoading(false);
             }
         }
 
         fetchOrders();
+
 
     }, []);
 
     return (
         <>
             <Grid container direction="column" size={9} p={2} sx={{minHeight: "70vh", margin: "auto"}}>
+                
                 <Grid size={12}>
                     <Typography variant="h3" textAlign="center">Orders</Typography>
                 </Grid>
                 <Grid container size={12} gap={2} p={2}>
+                    {isLoading && 
+                    <Grid size={12} sx={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                        <CircularProgress color={theme.palette.primary.main} />
+                    </Grid>
+                    }
                     {
                         orders?.map((order) => {
                             return (

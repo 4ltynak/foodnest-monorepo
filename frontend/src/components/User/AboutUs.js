@@ -10,7 +10,7 @@ function AboutUs(){
         <Grid direction="column">
         <Typography variant="h3" p={2} textAlign="center" mt={3}>Food for the Soul, Taste for Life</Typography>
         <Grid container className="about-container" p={3}>
-            <Grid container size={8} direction="column" justifyContent={"space-between"} p={2}>
+            <Grid container size={{xs: 12, md:8}} direction="column" justifyContent={"space-between"} p={2}>
                 <Grid size={12}>
                     <Typography variant="h4">A Taste You'll Remember</Typography>
                     <Typography variant="body1">
@@ -26,7 +26,7 @@ function AboutUs(){
                     </Typography>
                 </Grid> 
             </Grid>
-            <Grid size={4} sx={{height: "100%"}}>
+            <Grid size={4} sx={{height: "100%", display: {xs: "none", md: "initial"}}}>
                 <ImageList sx={{width:"100%"}} variant="quilted" cols={4} rowHeight={120}>
                     <ImageListItem cols={2} rows={2}><img src="/img/barbecue.jpg" alt="barbecue"/></ImageListItem>
                     <ImageListItem cols={2}><img src="/img/tomato-soup.jpg" alt="tomato soup"/></ImageListItem>

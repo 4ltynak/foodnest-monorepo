@@ -30,7 +30,7 @@ function MealsItem({food}){
                 />
                 </Grid>
                 <Grid>
-                    <CardContent>
+            <CardContent>
                 <Grid container justifyContent="space-between">
                     <Grid className="food-labels">
                         <Typography variant="h5">{food.itemName}</Typography>
@@ -51,17 +51,17 @@ function MealsItem({food}){
                 {isAdmin ? 
                 (<Grid container justifyContent={"space-between"} sx={{width:"100%"}}>
                     <Grid>
-                        <Button size="small" color="error" onClick={() => {removeItem(food.id)}}>REMOVE ITEM</Button>
+                        <Button size="small" color="error" sx={{margin: {xs: "0 auto", md: "0"}}} onClick={() => {removeItem(food.id)}}>REMOVE ITEM</Button>
                     </Grid>
                     <Grid>
-                        <Button size="small" onClick={() => setShowForm(true)}>EDIT ITEM</Button>
+                        <Button size="small" sx={{margin: {xs: "0 auto", md: "0"}}} onClick={() => setShowForm(true)}>EDIT ITEM</Button>
                     </Grid>
                         {showForm && <AdminForm foodItem={food} setShowForm={setShowForm}/>}
                 </Grid>)
                 : 
                 (
                     <>
-                        <Button size="small" variant="contained" onClick={() => addToCart(food)}>ADD TO CART</Button>
+                        <Button size="small" variant="contained" sx={{margin: {xs: "0 auto", md: "0"}}} onClick={() => addToCart(food)}>ADD TO CART</Button>
                     </>
                 
                 )
