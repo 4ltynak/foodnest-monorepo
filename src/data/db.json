@@ -1,0 +1,48 @@
+{
+  "items": [
+    {
+      "id": "5ab3f9d9-4b0e-4445-8903-477f88d3357d",
+      "itemName": "Pasta",
+      "itemDescription": "Hearty Italian meal",
+      "pricePerUnit": 12.99,
+      "imgURL": "https://i.ibb.co/S4nj8tK6/pexels-enginakyurt-1437267.jpg"
+    },
+    {
+      "id": "2472e036-1281-4cdb-b890-4f826ee90cfe",
+      "itemName": "Pancakes",
+      "itemDescription": "Delicious pancakes!",
+      "pricePerUnit": 16.9,
+      "imgURL": "https://i.ibb.co/nqL52njb/pexels-ash-craig-122861-376464.jpg"
+    },
+    {
+      "id": "b31d6bda-46ef-4b3f-a42e-49c5a0edbd2f",
+      "itemName": "French Fries",
+      "itemDescription": "Perfect for sharing",
+      "pricePerUnit": 12.9,
+      "imgURL": "https://i.ibb.co/TDLF4WhK/pexels-dzeninalukac-1583884.jpg"
+    }
+  ],
+  "orders": [
+    {
+      "id": "48f539c7-626c-4257-b5b5-1e6019a67b78",
+      "orderItems": [
+        {
+          "id": "2472e036-1281-4cdb-b890-4f826ee90cfe",
+          "itemName": "Pancakes",
+          "itemDescription": "Delicious pancakes!",
+          "pricePerUnit": 16.9,
+          "imgURL": "https://i.ibb.co/nqL52njb/pexels-ash-craig-122861-376464.jpg",
+          "quantity": 2
+        },
+        {
+          "id": "fc03ebc0-0c34-4f91-8914-f7f81bf1bc32",
+          "itemName": "French Fries",
+          "itemDescription": "Perfect snack to share",
+          "pricePerUnit": 7.9,
+          "imgURL": "https://i.ibb.co/PzxTvzF9/pexels-dzeninalukac-1583884.jpg",
+          "quantity": 1
+        }
+      ]
+    }
+  ]
+}
