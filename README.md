@@ -8,7 +8,7 @@ This app involves both customer and admin view. Users can switch between these t
 
 ## Notice About Limitations
 
-Currently, the project is using my-json-server as the host for the mock backend server. The version I am using is read only, so while the UI updates locally, the changes do not persist.
+Currently, the project is using my-json-server as the host for the mock backend server. The version I am using is **read-only**, so while the UI updates locally, the changes do not persist.
 
 ### Customers
 
