@@ -19,7 +19,7 @@ function Cart({closeModalHandler}) {
 
 
     async function addOrder(orderItems){
-        const newOrder = {id: crypto.randomUUID(), orderItems}; 
+        const newOrder = {orderItems}; 
         
         try {
             const response = await serverAPI.post("/orders", newOrder);

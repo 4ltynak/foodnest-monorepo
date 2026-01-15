@@ -26,10 +26,8 @@ export function ItemsProvider({children}){
             return({success: false});
         }
 
-        const newItem = {id: crypto.randomUUID(), ...itemObj};
-
         try{
-            const response = await serverAPI.post("/items", newItem);
+            const response = await serverAPI.post("/items", itemObj);
 
             if (response.status === 201) {
                 setItemsData(i => [...i, response.data]);
@@ -52,10 +50,10 @@ export function ItemsProvider({children}){
         }
 
         try {
-            await serverAPI.put(`/items/${itemObj.id}`, itemObj);
+            await serverAPI.put(`/items/${itemObj._id}`, itemObj);
             
             const updatedItemList = itemsData.map((item) => {
-                if (item.id === itemObj.id){
+                if (item._id === itemObj._id){
                     return itemObj;
                 } else{
                     return item;
@@ -77,7 +75,7 @@ export function ItemsProvider({children}){
     const removeItem = async (itemId) => {
         try{
             await serverAPI.delete(`items/${itemId}`);
-            const updatedItemList = itemsData.filter((item) => item.id !== itemId);
+            const updatedItemList = itemsData.filter((item) => item._id !== itemId);
             setItemsData(updatedItemList);
         } catch (err){
             setIsAlert(true);

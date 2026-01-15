@@ -1,5 +1,7 @@
 import axios from "axios";
 
+const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:3000";
+
 export default axios.create({
-    baseURL: "https://my-json-server.typicode.com/4ltynak/menu-data/"
+    baseURL: BASE_URL
 })

@@ -13,15 +13,21 @@ function AdminOrdersView(){
 
     const [orders, setOrders] = useState([]);
     const [isLoading, setIsLoading] = useState(null);
+
     async function retrieveOrders() {
         const response = await serverAPI.get("/orders");
         return response.data;
     }
 
     async function deleteOrder(orderID){
-        await serverAPI.delete(`/orders/${orderID}`);
-        const updatedOrders = orders.filter((order) => order.id !== orderID);
-        setOrders(updatedOrders);
+        try {
+            await serverAPI.delete(`/orders/${orderID}`);
+            const updatedOrders = orders.filter((order) => order._id !== orderID);
+            setOrders(updatedOrders);
+        } catch (error) {
+            console.log("Delete failed: ", error);
+        }
+
     }
 
     useEffect(() => {
